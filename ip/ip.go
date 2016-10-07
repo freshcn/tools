@@ -11,7 +11,7 @@ func ToLong(ip string) (rs uint32, ok bool) {
 	if ip == "" {
 		return
 	}
-	rs = binary.BigEndian.Uint32(net.ParseIP(ip).To16()[12:16])
+	rs = binary.BigEndian.Uint32(net.ParseIP(ip).To4())
 	if rs > 0 {
 		ok = true
 	}
